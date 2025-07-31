@@ -1,0 +1,171 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000002139bd21370 .scope module, "MyNot" "MyNot" 2 2;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "A";
+    .port_info 1 /OUTPUT 1 "Z";
+o000002139bd2efa8 .functor BUFZ 1, C4<z>; HiZ drive
+L_000002139bd20fa0 .functor NOT 1, o000002139bd2efa8, C4<0>, C4<0>, C4<0>;
+v000002139bd1cff0_0 .net "A", 0 0, o000002139bd2efa8;  0 drivers
+v000002139bd1ca50_0 .net "Z", 0 0, L_000002139bd20fa0;  1 drivers
+S_000002139bd29f10 .scope module, "MyXor" "MyXor" 3 2;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "A";
+    .port_info 1 /INPUT 1 "B";
+    .port_info 2 /OUTPUT 1 "Z";
+o000002139bd2f068 .functor BUFZ 1, C4<z>; HiZ drive
+o000002139bd2f098 .functor BUFZ 1, C4<z>; HiZ drive
+L_000002139bd212b0 .functor XOR 1, o000002139bd2f068, o000002139bd2f098, C4<0>, C4<0>;
+v000002139bd1d4f0_0 .net "A", 0 0, o000002139bd2f068;  0 drivers
+v000002139bd1d630_0 .net "B", 0 0, o000002139bd2f098;  0 drivers
+v000002139bd1d090_0 .net "Z", 0 0, L_000002139bd212b0;  1 drivers
+S_000002139bd2a0a0 .scope module, "testbench_q2" "testbench_q2" 4 3;
+ .timescale -9 -12;
+v000002139bd7f380_0 .var "A", 3 0;
+v000002139bd7f420_0 .var "B", 3 0;
+v000002139bd80820_0 .net "equal", 0 0, L_000002139bd20e50;  1 drivers
+S_000002139bd262a0 .scope module, "uut" "comparator_4bit" 4 10, 5 1 0, S_000002139bd2a0a0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "A";
+    .port_info 1 /INPUT 4 "B";
+    .port_info 2 /OUTPUT 1 "equal";
+v000002139bd80be0_0 .net "A", 3 0, v000002139bd7f380_0;  1 drivers
+v000002139bd7fd80_0 .net "B", 3 0, v000002139bd7f420_0;  1 drivers
+v000002139bd80c80_0 .net "equal", 0 0, L_000002139bd20e50;  alias, 1 drivers
+v000002139bd7f100_0 .net "w01", 0 0, L_000002139bd21240;  1 drivers
+v000002139bd80f00_0 .net "w23", 0 0, L_000002139bd20c20;  1 drivers
+v000002139bd7f880_0 .net "x", 3 0, L_000002139bd7ff60;  1 drivers
+L_000002139bd80280 .part v000002139bd7f380_0, 0, 1;
+L_000002139bd80d20 .part v000002139bd7f420_0, 0, 1;
+L_000002139bd7fe20 .part v000002139bd7f380_0, 1, 1;
+L_000002139bd80140 .part v000002139bd7f420_0, 1, 1;
+L_000002139bd7f920 .part v000002139bd7f380_0, 2, 1;
+L_000002139bd7fec0 .part v000002139bd7f420_0, 2, 1;
+L_000002139bd7fb00 .part v000002139bd7f380_0, 3, 1;
+L_000002139bd80320 .part v000002139bd7f420_0, 3, 1;
+L_000002139bd7ff60 .concat8 [ 1 1 1 1], L_000002139bd21080, L_000002139bd20de0, L_000002139bd20d00, L_000002139bd210f0;
+L_000002139bd80dc0 .part L_000002139bd7ff60, 0, 1;
+L_000002139bd806e0 .part L_000002139bd7ff60, 1, 1;
+L_000002139bd7f1a0 .part L_000002139bd7ff60, 2, 1;
+L_000002139bd7fc40 .part L_000002139bd7ff60, 3, 1;
+S_000002139bd26430 .scope module, "a01" "MyAnd" 5 15, 6 2 0, S_000002139bd262a0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "A";
+    .port_info 1 /INPUT 1 "B";
+    .port_info 2 /OUTPUT 1 "Z";
+L_000002139bd21240 .functor AND 1, L_000002139bd80dc0, L_000002139bd806e0, C4<1>, C4<1>;
+v000002139bd1d270_0 .net "A", 0 0, L_000002139bd80dc0;  1 drivers
+v000002139bd1d450_0 .net "B", 0 0, L_000002139bd806e0;  1 drivers
+v000002139bd1d590_0 .net "Z", 0 0, L_000002139bd21240;  alias, 1 drivers
+S_000002139bcdcb70 .scope module, "a23" "MyAnd" 5 16, 6 2 0, S_000002139bd262a0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "A";
+    .port_info 1 /INPUT 1 "B";
+    .port_info 2 /OUTPUT 1 "Z";
+L_000002139bd20c20 .functor AND 1, L_000002139bd7f1a0, L_000002139bd7fc40, C4<1>, C4<1>;
+v000002139bd1d6d0_0 .net "A", 0 0, L_000002139bd7f1a0;  1 drivers
+v000002139bd1d810_0 .net "B", 0 0, L_000002139bd7fc40;  1 drivers
+v000002139bd1d8b0_0 .net "Z", 0 0, L_000002139bd20c20;  alias, 1 drivers
+S_000002139bcdcd00 .scope module, "final" "MyAnd" 5 17, 6 2 0, S_000002139bd262a0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "A";
+    .port_info 1 /INPUT 1 "B";
+    .port_info 2 /OUTPUT 1 "Z";
+L_000002139bd20e50 .functor AND 1, L_000002139bd21240, L_000002139bd20c20, C4<1>, C4<1>;
+v000002139bd1d950_0 .net "A", 0 0, L_000002139bd21240;  alias, 1 drivers
+v000002139bd1caf0_0 .net "B", 0 0, L_000002139bd20c20;  alias, 1 drivers
+v000002139bd1cb90_0 .net "Z", 0 0, L_000002139bd20e50;  alias, 1 drivers
+S_000002139bcf2ce0 .scope module, "x0" "MyXnor" 5 9, 7 2 0, S_000002139bd262a0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "A";
+    .port_info 1 /INPUT 1 "B";
+    .port_info 2 /OUTPUT 1 "Z";
+L_000002139bd20bb0 .functor XOR 1, L_000002139bd80280, L_000002139bd80d20, C4<0>, C4<0>;
+L_000002139bd21080 .functor NOT 1, L_000002139bd20bb0, C4<0>, C4<0>, C4<0>;
+v000002139bd803c0_0 .net "A", 0 0, L_000002139bd80280;  1 drivers
+v000002139bd7f9c0_0 .net "B", 0 0, L_000002139bd80d20;  1 drivers
+v000002139bd80960_0 .net "Z", 0 0, L_000002139bd21080;  1 drivers
+v000002139bd80e60_0 .net *"_ivl_0", 0 0, L_000002139bd20bb0;  1 drivers
+S_000002139bcf2e70 .scope module, "x1" "MyXnor" 5 10, 7 2 0, S_000002139bd262a0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "A";
+    .port_info 1 /INPUT 1 "B";
+    .port_info 2 /OUTPUT 1 "Z";
+L_000002139bd20d70 .functor XOR 1, L_000002139bd7fe20, L_000002139bd80140, C4<0>, C4<0>;
+L_000002139bd20de0 .functor NOT 1, L_000002139bd20d70, C4<0>, C4<0>, C4<0>;
+v000002139bd7f7e0_0 .net "A", 0 0, L_000002139bd7fe20;  1 drivers
+v000002139bd80fa0_0 .net "B", 0 0, L_000002139bd80140;  1 drivers
+v000002139bd80460_0 .net "Z", 0 0, L_000002139bd20de0;  1 drivers
+v000002139bd800a0_0 .net *"_ivl_0", 0 0, L_000002139bd20d70;  1 drivers
+S_000002139bd25840 .scope module, "x2" "MyXnor" 5 11, 7 2 0, S_000002139bd262a0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "A";
+    .port_info 1 /INPUT 1 "B";
+    .port_info 2 /OUTPUT 1 "Z";
+L_000002139bd20c90 .functor XOR 1, L_000002139bd7f920, L_000002139bd7fec0, C4<0>, C4<0>;
+L_000002139bd20d00 .functor NOT 1, L_000002139bd20c90, C4<0>, C4<0>, C4<0>;
+v000002139bd7fba0_0 .net "A", 0 0, L_000002139bd7f920;  1 drivers
+v000002139bd7f560_0 .net "B", 0 0, L_000002139bd7fec0;  1 drivers
+v000002139bd808c0_0 .net "Z", 0 0, L_000002139bd20d00;  1 drivers
+v000002139bd80a00_0 .net *"_ivl_0", 0 0, L_000002139bd20c90;  1 drivers
+S_000002139bd259d0 .scope module, "x3" "MyXnor" 5 12, 7 2 0, S_000002139bd262a0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "A";
+    .port_info 1 /INPUT 1 "B";
+    .port_info 2 /OUTPUT 1 "Z";
+L_000002139bd211d0 .functor XOR 1, L_000002139bd7fb00, L_000002139bd80320, C4<0>, C4<0>;
+L_000002139bd210f0 .functor NOT 1, L_000002139bd211d0, C4<0>, C4<0>, C4<0>;
+v000002139bd80640_0 .net "A", 0 0, L_000002139bd7fb00;  1 drivers
+v000002139bd80aa0_0 .net "B", 0 0, L_000002139bd80320;  1 drivers
+v000002139bd80b40_0 .net "Z", 0 0, L_000002139bd210f0;  1 drivers
+v000002139bd7f240_0 .net *"_ivl_0", 0 0, L_000002139bd211d0;  1 drivers
+    .scope S_000002139bd2a0a0;
+T_0 ;
+    %vpi_call 4 17 "$display", "     A      B  | Equal" {0 0 0};
+    %vpi_call 4 18 "$display", "------------------------" {0 0 0};
+    %vpi_call 4 19 "$monitor", "%b %b |   %b", v000002139bd7f380_0, v000002139bd7f420_0, v000002139bd80820_0 {0 0 0};
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v000002139bd7f380_0, 0, 4;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v000002139bd7f420_0, 0, 4;
+    %delay 10000, 0;
+    %pushi/vec4 10, 0, 4;
+    %store/vec4 v000002139bd7f380_0, 0, 4;
+    %pushi/vec4 10, 0, 4;
+    %store/vec4 v000002139bd7f420_0, 0, 4;
+    %delay 10000, 0;
+    %pushi/vec4 15, 0, 4;
+    %store/vec4 v000002139bd7f380_0, 0, 4;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v000002139bd7f420_0, 0, 4;
+    %delay 10000, 0;
+    %pushi/vec4 12, 0, 4;
+    %store/vec4 v000002139bd7f380_0, 0, 4;
+    %pushi/vec4 13, 0, 4;
+    %store/vec4 v000002139bd7f420_0, 0, 4;
+    %delay 10000, 0;
+    %pushi/vec4 9, 0, 4;
+    %store/vec4 v000002139bd7f380_0, 0, 4;
+    %pushi/vec4 9, 0, 4;
+    %store/vec4 v000002139bd7f420_0, 0, 4;
+    %delay 10000, 0;
+    %vpi_call 4 28 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 8;
+    "N/A";
+    "<interactive>";
+    "MyNot.v";
+    "MyXor.v";
+    "testbench2.v";
+    "q2.v";
+    "MyAnd.v";
+    "MyXnor.v";
