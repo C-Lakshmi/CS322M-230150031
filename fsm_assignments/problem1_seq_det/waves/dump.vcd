@@ -1,0 +1,136 @@
+$date
+	Mon Aug 18 19:01:14 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_seq_detect_mealy $end
+$var wire 1 ! y $end
+$var reg 1 " clk $end
+$var reg 1 # din $end
+$var reg 1 $ rst $end
+$var reg 21 % stream [0:20] $end
+$var integer 32 & i [31:0] $end
+$scope module dut $end
+$var wire 1 " clk $end
+$var wire 1 # din $end
+$var wire 1 $ rst $end
+$var parameter 2 ' S0 $end
+$var parameter 2 ( S1 $end
+$var parameter 2 ) S2 $end
+$var parameter 2 * S3 $end
+$var reg 2 + next_state [1:0] $end
+$var reg 2 , state [1:0] $end
+$var reg 1 ! y $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b11 *
+b10 )
+b1 (
+b0 '
+$end
+#0
+$dumpvars
+bx ,
+bx +
+bx &
+bx %
+1$
+0#
+0"
+0!
+$end
+#5
+b0 +
+b0 ,
+1"
+#10
+0"
+#12
+b0 &
+b11011011101 %
+0$
+#15
+b1 &
+1"
+#20
+0"
+#25
+b10 &
+1"
+#30
+0"
+#35
+b11 &
+1"
+#40
+0"
+#45
+b100 &
+1"
+#50
+0"
+#55
+b101 &
+1"
+#60
+0"
+#65
+b110 &
+1"
+#70
+0"
+#75
+b111 &
+1"
+#80
+0"
+#85
+b1000 &
+1"
+#90
+0"
+#95
+b1001 &
+1"
+#100
+0"
+#105
+b1010 &
+1"
+#110
+0"
+#115
+b1 +
+b1011 &
+1#
+1"
+#120
+0"
+#125
+b10 +
+b1 ,
+1"
+#130
+0"
+#135
+b10 ,
+1"
+#140
+0"
+#145
+1"
+#150
+0"
+#155
+1"
+#160
+0"
+#165
+1"
